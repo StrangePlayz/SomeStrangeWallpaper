@@ -1,12 +1,43 @@
 # SomeStrangeWallpaper
 A simple GNOME extension that lets you choose a video as your desktop-background.
 
-SETUP:
 
-1. Put the folder in the following location:
-~/.local/share/gnome-shell/extensions/somestrangewallpaper@strange.com
+## Installation
 
-2. Run the following compile command: 
-glib-compile-schemas schemas/
+The easiest way to install this extension manually from source is by using the provided `Makefile`.
 
-3. Choose your wallpaper and enjoy.
+### Prerequisites
+
+Make sure you have `make` and the GLib development tools installed on your system. 
+
+* **Ubuntu/Debian:** `sudo apt install make libglib2.0-bin`
+* **Fedora:** `sudo dnf install make glib2-devel`
+* **Arch Linux:** `sudo pacman -S make`
+
+### Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd SomeStrangeWallpaper
+   ```
+
+2. **Install the extension:**
+   This command automatically copies the files to your local extension directory and compiles the GSettings schemas.
+   ```bash
+   make install
+   ```
+
+3. **Restart GNOME Shell:**
+   * **Wayland:** Log out of your desktop session and log back in.
+
+4. **Enable the extension:**
+   Open the **Extensions** or **Extension Manager** app and turn on "SomeStrangeWallpaper".
+
+## Uninstallation
+
+To completely remove the extension and its compiled schemas from your system, run:
+
+```bash
+make uninstall
+```
