@@ -18,19 +18,19 @@ export default class VideoWallpaperPrefs extends ExtensionPreferences {
             const group = new Adw.PreferencesGroup({ title: monitorName });
             page.add(group);
 
-            const row = new Adw.ActionRow({ title: 'Hintergrund auswählen' });
+            const row = new Adw.ActionRow({ title: 'Choose Wallpaper' });
             group.add(row);
 
             const fileButton = new Gtk.Button({
-                label: currentPaths[i] ? 'Hintergrund ändern...' : 'Hintergrund wählen...',
+                label: currentPaths[i] ? 'Change Wallpaper...' : 'Choose Wallpaper...',
                 valign: Gtk.Align.CENTER
             });
             row.add_suffix(fileButton);
 
             fileButton.connect('clicked', () => {
-                const dialog = new Gtk.FileDialog({ title: `Hintergrund für ${monitorName}` });
+                const dialog = new Gtk.FileDialog({ title: `Wallpaper for ${monitorName}` });
                 const filter = new Gtk.FileFilter();
-                filter.set_name("Video-Dateien");
+                filter.set_name("Video-Files");
                 filter.add_mime_type("video/mp4");
                 filter.add_mime_type("video/webm");
 
@@ -43,7 +43,7 @@ export default class VideoWallpaperPrefs extends ExtensionPreferences {
                         const file = dialog.open_finish(res);
                         currentPaths[i] = file.get_path();
                         settings.set_strv('video-paths', currentPaths);
-                        fileButton.set_label('Hintergrund ändern...');
+                        fileButton.set_label('Change Wallpaper...');
                     } catch (e) { }
                 });
             });
