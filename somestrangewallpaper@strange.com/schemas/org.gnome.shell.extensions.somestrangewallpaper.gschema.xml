@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.somestrangewallpaper" path="/org/gnome/shell/extensions/somestrangewallpaper/">
+    <key name="video-paths" type="as">
+      <default>[]</default>
+      <summary>Liste der Videopfade</summary>
+    </key>
+  </schema>
+</schemalist>

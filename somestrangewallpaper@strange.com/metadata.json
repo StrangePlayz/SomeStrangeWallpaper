@@ -1,0 +1,8 @@
+{
+  "name": "SomeStrangeWallpaper",
+  "description": "Spielt deine Videos als Desktop-Hintergrund ab",
+  "uuid": "somestrangewallpaper@strange.com",
+  "shell-version": [ "50" ],
+  "version": 1,
+  "version-name": "1.0.0"
+}
