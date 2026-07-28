@@ -3,6 +3,6 @@
   "description": "SomeStrangeWallpaper plays your strange videos as your background-wallpapers!",
   "uuid": "somestrangewallpaper@strange.com",
   "shell-version": [ "50", "51" ],
-  "version": 1,
-  "version-name": "1.0.0"
+  "version": 2,
+  "version-name": "1.0.1"
 }
