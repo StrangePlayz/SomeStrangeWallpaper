@@ -18,7 +18,7 @@ Make sure you have `make` and the GLib development tools installed on your syste
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/StrangePlayz/SomeStrangeWallpaper
    cd SomeStrangeWallpaper
    ```
 
