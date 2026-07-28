@@ -1,7 +1,7 @@
 import Gio from 'gi://Gio';
 import Adw from 'gi://Adw';
 import Gtk from 'gi://Gtk';
-import ExtensionPreferences from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 export default class VideoWallpaperPrefs extends ExtensionPreferences {
     fillPreferencesWindow(window) {
@@ -9,12 +9,15 @@ export default class VideoWallpaperPrefs extends ExtensionPreferences {
         const page = new Adw.PreferencesPage();
         window.add(page);
 
-        const monitorManager = global.display.get_monitor_manager();
-        const monitorCount = monitorManager.get_num_monitors();
+        const display = window.get_display();
+        const monitors = display.get_monitors();
+        const monitorCount = monitors.get_n_items();
         let currentPaths = settings.get_strv('video-paths') || [];
 
         for (let i = 0; i < monitorCount; i++) {
-            const monitorName = monitorManager.get_monitor_product_string(i) || `Monitor ${i + 1}`;
+            const monitor = monitors.get_item(i);
+            const monitorName = monitor.get_model() || `Monitor ${i + 1}`;
+            
             const group = new Adw.PreferencesGroup({ title: monitorName });
             page.add(group);
 
